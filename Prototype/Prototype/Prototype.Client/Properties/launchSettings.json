@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Prototype.Client": {
+      "commandName": "Project",
+      "launchBrowser": true
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "launchBrowser": true,
+      "distributionName": ""
+    }
+  }
+}
