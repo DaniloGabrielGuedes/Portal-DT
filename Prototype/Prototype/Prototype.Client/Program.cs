@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 namespace Prototype.Client
 {
-    internal class Program
+    public class Program
     {
         static async Task Main(string[] args)
         {

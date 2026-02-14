@@ -1,0 +1,20 @@
+{
+  "name": "prototype-client",
+  "version": "1.0.0",
+  "scripts": {
+    "css:build": "tailwindcss -i ./Styles/dreamup.css -o ./wwwroot/css/dreamup.css --minify",
+    "css:watch": "tailwindcss -i ./Styles/dreamup.css -o ./wwwroot/css/dreamup.css --watch",
+    "copy:preline": "node -e \"require('fs').copyFileSync('./node_modules/preline/dist/preline.js', './wwwroot/js/preline.js')\"",
+    "build": "npm run css:build && npm run copy:preline",
+    "dev": "npm run copy:preline && npm run css:watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "preline": "^2.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}

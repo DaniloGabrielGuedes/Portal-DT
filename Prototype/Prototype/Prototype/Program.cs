@@ -1,14 +1,13 @@
-using Prototype.Components;
+using Prototype.Client.Components;
 
 namespace Prototype
 {
-    public class Program
+    internal class Program
     {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents()
                 .AddInteractiveWebAssemblyComponents();
@@ -32,11 +31,10 @@ namespace Prototype
 
             app.UseAntiforgery();
 
-            app.MapStaticAssets();
+            app.UseStaticFiles();
             app.MapRazorComponents<App>()
                 .AddInteractiveServerRenderMode()
-                .AddInteractiveWebAssemblyRenderMode()
-                .AddAdditionalAssemblies(typeof(Client._Imports).Assembly);
+                .AddInteractiveWebAssemblyRenderMode();
 
             app.Run();
         }

@@ -10,7 +10,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Styles\dreamup.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.3" />
   </ItemGroup>
+
+  <Target Name="BuildTailwind" BeforeTargets="Build">
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="npm install" Condition="!Exists('$(MSBuildProjectDirectory)\node_modules')" />    
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="npm run build" />
+  </Target>
 
 </Project>
