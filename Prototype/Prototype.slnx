@@ -1,4 +1,3 @@
 <Solution>
-  <Project Path="Prototype/Prototype.Client/Prototype.Client.csproj" />
-  <Project Path="Prototype/Prototype/Prototype.csproj" />
+  <Project Path="Prototype/Prototype.csproj" />
 </Solution>

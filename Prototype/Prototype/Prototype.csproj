@@ -6,14 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Prototype.Client\Prototype.Client.csproj" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
+	
+  <Target Name="BuildTailwind" BeforeTargets="Build">
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="npm install" Condition="!Exists('$(MSBuildProjectDirectory)\node_modules')" />    
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="npm run build" />
+  </Target>
 
 </Project>
