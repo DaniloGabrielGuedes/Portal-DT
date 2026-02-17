@@ -108,3 +108,7 @@ html {
     background-position: 100% 50%;
   }
 }
+
+.sectionInicial {
+    min-height: 92vh;
+}

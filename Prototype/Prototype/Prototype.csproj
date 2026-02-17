@@ -11,5 +11,9 @@
     <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="npm install" Condition="!Exists('$(MSBuildProjectDirectory)\node_modules')" />    
     <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="npm run build" />
   </Target>
+	
+  <ItemGroup>
+    <None Include="wwwroot\images\logo prov.png" />
+  </ItemGroup>
 
 </Project>

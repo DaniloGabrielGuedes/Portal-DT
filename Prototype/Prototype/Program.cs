@@ -25,7 +25,8 @@ namespace Prototype
 
             app.UseHttpsRedirection();
 
-            app.MapStaticAssets();
+            app.MapStaticAssets(); 
+            app.UseStaticFiles();
             app.UseAntiforgery();
 
             app.MapRazorComponents<App>()
