@@ -1,4 +1,4 @@
-﻿<section id="SectionInicio" class="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 sectionInicial">
+﻿<section id="inicio" class="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 sectionInicial">
     
     <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMzNzdiZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-40"></div>
     
@@ -9,19 +9,18 @@
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div class="text-center">
 
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
-                Destrave o potencial do seu
-                <span class="block mt-2 gradient-text-animate">
-                    ERP Enterprise
-                </span>
+            <h1 id="hero-title"
+                class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight transition-opacity duration-700 opacity-100">
+                Soluções totalmente personalizadas para a sua empresa.
             </h1>
 
-            <p class="text-xl sm:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
-                Soluções corporativas desenvolvidas com excelência e sem complicações.
+            <p class="text-xl sm:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">                
+                Com uma equipe experiente constituída de analistas e consultores, nós somos referência em eficiencia e resultado prático.
             </p>
             
             <p class="text-base sm:text-lg text-blue-200/70 mb-4 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-                Desenvolvemos módulos de extensibilidade para sistemas de gestão complexos. Reduza processos manuais e ganhe performance com integrações nativas, seguras e extremamente rápidas.
+                Desenvolvemos módulos de extensibilidade para sistemas de gestão complexos ou simples.
+                Reduza processos manuais e ganhe performance com integrações nativas, seguras e extremamente rápidas.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-200">
@@ -78,3 +77,32 @@
     </div>
     
 </section>
+
+<script>
+    const phrases = [
+        "Soluções totalmente personalizadas para a sua empresa.",
+        "Criação de CRMs de acordo com a sua necessidade.",
+        "Integre dados em tempo real com o seu ERP.",
+        "Automatize processos. Aumente performance. Reduza burocracias.",
+        "Tecnologia sob medida para escalar seu negócio."
+    ];
+
+    const heroTitle = document.getElementById("hero-title");
+
+    let index = 0;
+
+    function changePhrase() {
+        heroTitle.classList.remove("opacity-100");
+        heroTitle.classList.add("opacity-0");
+
+        setTimeout(() => {
+            index = (index + 1) % phrases.length;
+            heroTitle.textContent = phrases[index];
+
+            heroTitle.classList.remove("opacity-0");
+            heroTitle.classList.add("opacity-100");
+        }, 500);
+    }
+
+    setInterval(changePhrase, 8000);
+</script>
